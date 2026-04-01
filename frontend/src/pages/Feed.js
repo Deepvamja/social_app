@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import API from "../api/axios";
 import CreatePost from "../components/CreatePost";
 import PostCard from "../components/PostCard";
@@ -10,8 +10,8 @@ export default function Feed() {
   const [search, setSearch] = useState("");
   const [loading, setLoading] = useState(true);
 
-  // Fetch posts with pagination
-  const fetchPosts = async () => {
+  // ✅ FIXED: useCallback added
+  const fetchPosts = useCallback(async () => {
     try {
       setLoading(true);
       const res = await API.get(`/posts?page=${page}`);
@@ -21,11 +21,12 @@ export default function Feed() {
     } finally {
       setLoading(false);
     }
-  };
+  }, [page]);
 
+  // ✅ FIXED: dependency added
   useEffect(() => {
     fetchPosts();
-  }, [page]);
+  }, [fetchPosts]);
 
   return (
     <div className="container">
