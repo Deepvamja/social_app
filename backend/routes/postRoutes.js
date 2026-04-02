@@ -38,7 +38,9 @@ router.post("/", auth, upload.single("image"), async (req, res) => {
       userId: req.user.id,
       username,
       text: text || "",
-      image: req.file ? req.file.path : "",
+      image: req.file
+    ? `${req.protocol}://${req.get("host")}/uploads/${req.file.filename}`
+    : "",
       likes: [],
       comments: []
     });
