@@ -38,16 +38,16 @@ Users can create accounts, share posts, like, comment, and interact in a clean, 
 * Add comments
 * Stores usernames of interactions
 
-### 🔍 Search
+### 🔍 Search   (Bonus Features)
 
 * Search posts by username or content
 
-### 📄 Pagination (Bonus 🚀)
+### 📄 Pagination (Bonus Features)
 
 * Load posts page-by-page (5 posts at a time)
 * Smooth navigation
 
-### 📱 Responsive UI (Bonus 🚀)
+### 📱 Responsive UI (Bonus Features)
 
 * Mobile-friendly design
 * Clean, modern layout
