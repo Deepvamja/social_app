@@ -14,7 +14,7 @@ export default function Feed() {
   const fetchPosts = useCallback(async () => {
     try {
       setLoading(true);
-      const res = await API.get(`/posts?page=${page}`);
+      const res = await API.get(`/api/posts?page=${page}`);
       setPosts(res.data);
     } catch (err) {
       console.log(err);
