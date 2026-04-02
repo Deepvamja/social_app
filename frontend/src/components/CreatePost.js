@@ -20,7 +20,7 @@ export default function CreatePost({ refresh }) {
       if (image) formData.append("image", image);
       formData.append("username", user.name);
 
-      await API.post("/posts", formData, {
+      await API.post("/api/posts", formData, {
         headers: { Authorization: localStorage.getItem("token") }
       });
 
