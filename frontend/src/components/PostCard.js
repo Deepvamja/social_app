@@ -8,7 +8,7 @@ export default function PostCard({ post, refresh }) {
   // Like/unlike post
   const like = async () => {
     await API.put(
-      `/posts/${post._id}/like`,
+      `/api/posts/${post._id}/like`,
       { username: user.name },
       { headers: { Authorization: localStorage.getItem("token") } }
     );
@@ -20,7 +20,7 @@ export default function PostCard({ post, refresh }) {
     if (!comment) return;
 
     await API.post(
-      `/posts/${post._id}/comment`,
+      `/api/posts/${post._id}/comment`,
       { text: comment, username: user.name },
       { headers: { Authorization: localStorage.getItem("token") } }
     );
