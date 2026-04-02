@@ -7,7 +7,7 @@ Users can create accounts, share posts, like, comment, and interact in a clean, 
 
 ## ✨ Live Demo
 
-* 🌐 Frontend: https://social-app-flame-seven.vercel.app/
+* 🌐 Frontend: https://social-app-sand-gamma.vercel.app/
 * 🔗 Backend API: https://social-app-csld.onrender.com
 
 ---
