@@ -69,7 +69,7 @@ export default function PostCard({ post, refresh }) {
         </p>
       ))}
 
-      {/* Add comment */}
+  
       <input
         className="comment-input"
         value={comment}
