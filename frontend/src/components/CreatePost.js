@@ -5,6 +5,7 @@ import { PhotoCamera, EmojiEmotions, Campaign } from "@mui/icons-material";
 export default function CreatePost({ refresh }) {
   const [text, setText] = useState("");
   const [image, setImage] = useState(null);
+  const [preview, setPreview] = useState(null); 
   const [loading, setLoading] = useState(false);
 
   const user = JSON.parse(localStorage.getItem("user"));
@@ -26,6 +27,7 @@ export default function CreatePost({ refresh }) {
 
       setText("");
       setImage(null);
+      setPreview(null); 
       refresh();
     } finally {
       setLoading(false);
@@ -47,13 +49,34 @@ export default function CreatePost({ refresh }) {
         className="input-box"
       />
 
+  
+      {preview && (
+        <img
+          src={preview}
+          alt="preview"
+          style={{
+            width: "100%",
+            marginTop: "10px",
+            borderRadius: "10px"
+          }}
+        />
+      )}
+
       <div className="icons-row">
 
         <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
 
           <label className="icon">
             <PhotoCamera />
-            <input hidden type="file" onChange={(e) => setImage(e.target.files[0])} />
+            <input
+              hidden
+              type="file"
+              onChange={(e) => {
+                const file = e.target.files[0];
+                setImage(file);
+                setPreview(URL.createObjectURL(file)); 
+              }}
+            />
           </label>
 
           <EmojiEmotions className="icon" />
