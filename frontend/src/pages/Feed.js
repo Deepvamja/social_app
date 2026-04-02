@@ -10,7 +10,7 @@ export default function Feed() {
   const [search, setSearch] = useState("");
   const [loading, setLoading] = useState(true);
 
-  // ✅ FIXED: useCallback added
+
   const fetchPosts = useCallback(async () => {
     try {
       setLoading(true);
@@ -23,7 +23,6 @@ export default function Feed() {
     }
   }, [page]);
 
-  // ✅ FIXED: dependency added
   useEffect(() => {
     fetchPosts();
   }, [fetchPosts]);
@@ -31,11 +30,11 @@ export default function Feed() {
   return (
     <div className="container">
 
-      {/* Header */}
+   
       <div className="header">
         <h2>Social Feed</h2>
 
-        {/* Search */}
+     
         <input
           className="search-bar"
           placeholder="Search..."
@@ -44,10 +43,9 @@ export default function Feed() {
         />
       </div>
 
-      {/* Create post */}
+   
       <CreatePost refresh={fetchPosts} />
 
-      {/* Posts */}
       {loading ? (
         <p className="center-text">Loading...</p>
       ) : (
@@ -61,7 +59,7 @@ export default function Feed() {
           ))
       )}
 
-      {/* Pagination */}
+    
       <div className="pagination">
         <button disabled={page === 1} onClick={() => setPage(page - 1)}>
           Prev
