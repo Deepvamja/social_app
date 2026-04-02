@@ -62,7 +62,7 @@ export default function PostCard({ post, refresh }) {
         <span>💬 {post.comments.length}</span>
       </div>
 
-      {/* Comments */}
+   
       {post.comments.map((c, i) => (
         <p key={i}>
           <b>{c.username}</b>: {c.text}
