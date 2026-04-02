@@ -51,7 +51,7 @@ export default function PostCard({ post, refresh }) {
 
       {post.image && (
         <img
-          src={`http://localhost:5000/${post.image}`}
+          src={post.image}
           alt="post"
           className="post-img"
         />
