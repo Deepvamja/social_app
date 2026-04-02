@@ -9,7 +9,7 @@ export default function CommentBox({ postId, refresh }){
     if (!text) return;
 
     await API.post(
-      `/posts/${postId}/comment`,
+      `/api/posts/${postId}/comment`,
       {
         text,
         username: user.name
